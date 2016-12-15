@@ -10,6 +10,14 @@ import android.widget.ImageView;
 
 interface Task {
     String getSource();
+
     Bitmap getResult();
+
     ImageView getTarget();
+
+    void setSource(String url);
+
+    void setResult(Bitmap bitmap);
+
+    void setTarget(ImageView imageView);
 }

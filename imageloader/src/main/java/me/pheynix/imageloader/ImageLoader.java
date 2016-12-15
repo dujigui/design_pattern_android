@@ -43,9 +43,9 @@ public class ImageLoader {
     }
 
     public void load(final ImageView imageView, final String url){
-        final ImageTask task = new ImageTask();
-        task.source = url;
-        task.target = imageView;
+        final Task task = new ImageTask();
+        task.setSource(url);
+        task.setTarget(imageView);
 
         imageView.setTag(url);
         services.submit(new Runnable() {
@@ -62,7 +62,7 @@ public class ImageLoader {
 
                 if (result != null && url.equals(imageView.getTag())) {
                     cache.put(result, url);
-                    task.result = result;
+                    task.setResult(result);
                     Message msg = dispatcher.obtainMessage(Dispatcher.TASK_SUCCESS, task);
                     dispatcher.sendMessage(msg);
                 }
