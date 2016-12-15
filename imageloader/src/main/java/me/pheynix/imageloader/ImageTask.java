@@ -27,4 +27,19 @@ class ImageTask implements Task {
     public ImageView getTarget() {
         return target;
     }
+
+    @Override
+    public void setSource(String url) {
+        this.source = url;
+    }
+
+    @Override
+    public void setResult(Bitmap bitmap) {
+        this.result = bitmap;
+    }
+
+    @Override
+    public void setTarget(ImageView imageView) {
+        this.target = imageView;
+    }
 }
